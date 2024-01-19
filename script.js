@@ -5,22 +5,65 @@ const body = document.querySelector('body');
 const header = document.querySelector('.header');
 const scrollBar = document.querySelector('#scrollBar');
 
+function loadPageDelay() {
+  if (body.classList.contains('homePage')) {
+    return 3000;
+  } else {
+    return 250;
+  }
+}
+
 window.onload = function () {
-    main.classList.add('loaded_hiding');
-    body.classList.add('look');
-    scrollBar.classList.add('hiding')
-    window.setTimeout(function () {
+  main.classList.add('loaded_hiding');
+  body.classList.add('look');
+  scrollBar.classList.add('hiding')
+  window.setTimeout(function () {
       main.classList.add('loaded');
       main.classList.remove('loaded_hiding');
       body.classList.remove('look');
       scrollBar.classList.remove('hiding')
       burgerBtn.addEventListener('click', function() {
-        body.classList.toggle('look');
-        burgerMenu.classList.toggle('active');
-        burgerBtn.classList.toggle('active');
+          body.classList.toggle('look');
+          burgerMenu.classList.toggle('active');
+          burgerBtn.classList.toggle('active');
       })
-    }, 3000);
+  }, loadPageDelay());
 }
+
+
+// PORTFOLIO
+const portfolioItems = document.querySelectorAll('.portfolio-item');
+const portfolioItemInfo = document.querySelectorAll('.portfolio-item__info');
+const portfolioInfoClose = document.querySelectorAll('.portfolio-item__info_close');
+
+portfolioItems.forEach(function(item, index) {
+    item.addEventListener('click', function() {
+        for(let i = 0; i < portfolioItemInfo.length; i++) {
+          if(index == i) {
+            portfolioItemInfo[i].classList.add('active');
+            body.classList.add('look');
+            scrollBar.classList.add('hiding')
+          }
+        }
+    });
+});
+
+portfolioInfoClose.forEach(function(item) {
+  item.addEventListener('click', function() {
+    for(let i = 0; i < portfolioItemInfo.length; i++) {
+        portfolioItemInfo[i].classList.remove('active');
+    }
+    body.classList.toggle('look');
+    scrollBar.classList.remove('hiding')
+  })
+});
+
+
+
+
+
+
+
 
 let animItems = document.querySelectorAll('.anim-item');
 let anchors = document.querySelectorAll('.anchor')
@@ -38,7 +81,7 @@ function animOnScroll() {
 
       let anchorPoint = (window.innerHeight - anchorHight) / anchorOffSet;
       if (anchorHight > window.innerHeight) {
-        anchorPoint = (window.innerHeight - window.innerHeight) / anchorOffSet;
+        anchorPoint = (window.innerHeight - window.innerHeight) / anchorOffSet + 50;
       }
       anchorLinks[i].classList.remove('active');
       if((pageYOffset > anchorOffSet - anchorPoint) && pageYOffset < (anchorOffSet + anchorHight)) {
@@ -71,9 +114,10 @@ function offset(el) {
     scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
 }
+
 setTimeout(() => {
-    animOnScroll();
-}, 3000);
+  animOnScroll();
+}, loadPageDelay());
 
 // ScrollBar 
 const scrollBarLine = document.querySelector('#scrollBar > span');
@@ -119,4 +163,4 @@ function setValue() {
   hourArrow.london.style.transform = `rotate(${time.london}deg)`;
   hourArrow.melbourne.style.transform = `rotate(${time.melbourne}deg)`;
 }
-setInterval(setValue, 1000);
+setInterval(setValue, 5000);
