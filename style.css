@@ -356,6 +356,10 @@ header {
     width: 100%;
     height: 100%;
     background: var(--mainColor);
+    background-image: url('./img/background/трикутнички_на\ фіолетовому\ фоні.svg');
+    background-size: 80%;
+    background-repeat: repeat-y;
+    background-position: right;
     transition: all 600ms ease;
 }
 
@@ -384,7 +388,11 @@ header {
 
 .main {
     color: var(--textColor);
-    background: var(--mainColor);
+    background-color: var(--mainColor);
+    background-image: url('./img/background/трикутнички_на\ фіолетовому\ фоні1_.svg');
+    background-size: 70% auto;
+    background-repeat: repeat-y;
+    background-position: right;
     padding-top: var(--headerHaight);
 }
 
@@ -591,9 +599,6 @@ header {
 }
 .principles .container {
     padding-right: 300px;
-}
-.principles-list {
-
 }
 .principles-item {
     display: grid;
