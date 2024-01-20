@@ -997,6 +997,9 @@ img.anim-item {
         text-align: center;
         font-size: 22px;
     }
+    .home .title {
+        margin: 0 auto 30px;
+    }
 
     .content-block__seven .grid-container {
         grid-template-columns: 1fr;
