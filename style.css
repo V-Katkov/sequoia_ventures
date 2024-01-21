@@ -650,6 +650,13 @@ hr {
 .portfolio-item {
     cursor: pointer;
     margin-bottom: 10px;
+    min-height: 40px;
+}
+.portfolio-item.big {
+    min-height: 120px;
+}
+.portfolio-item.max {
+    min-height: 270px;
 }
 .portfolio-item__color {
     display: none;
