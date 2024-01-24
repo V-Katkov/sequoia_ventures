@@ -58,18 +58,18 @@ portfolioInfoClose.forEach(function(item) {
   })
 });
 
-
-
-
-
-
-
-
 let animItems = document.querySelectorAll('.anim-item');
 let anchors = document.querySelectorAll('.anchor')
 let anchorLinks = document.querySelectorAll('.header-nav__item')
 
 window.addEventListener('scroll', animOnScroll);
+
+anchorLinks.forEach(function(link) {
+  link.addEventListener('click', function() {
+      burgerMenu.classList.remove('active');
+      burgerBtn.classList.remove('active');
+  })
+})
 
 function animOnScroll() {
 
@@ -79,9 +79,9 @@ function animOnScroll() {
       const anchorOffSet = offset(anchor).top;
       const animStart = 4;
 
-      let anchorPoint = (window.innerHeight - anchorHight) / anchorOffSet;
+      let anchorPoint = (window.innerHeight - anchorHight) / anchorOffSet + 50;
       if (anchorHight > window.innerHeight) {
-        anchorPoint = (window.innerHeight - window.innerHeight) / anchorOffSet;
+        anchorPoint = (window.innerHeight - window.innerHeight) / anchorOffSet + 50;
       }
       anchorLinks[i].classList.remove('active');
       if((pageYOffset > anchorOffSet - anchorPoint) && pageYOffset < (anchorOffSet + anchorHight)) {
