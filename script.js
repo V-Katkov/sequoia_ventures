@@ -76,7 +76,7 @@ function animOnScroll() {
     for(let i = 0; i < anchors.length; i++) {
       const anchor = anchors[i];
       const anchorHight = anchor.offsetHeight;
-      const anchorOffSet = offset(anchor).top;
+      const anchorOffSet = offset(anchor).top - 80;
       const animStart = 4;
 
       let anchorPoint = (window.innerHeight - anchorHight) / anchorOffSet;
