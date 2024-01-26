@@ -79,9 +79,9 @@ function animOnScroll() {
       const anchorOffSet = offset(anchor).top;
       const animStart = 4;
 
-      let anchorPoint = (window.innerHeight - anchorHight) / anchorOffSet + 50;
+      let anchorPoint = (window.innerHeight - anchorHight) / anchorOffSet;
       if (anchorHight > window.innerHeight) {
-        anchorPoint = (window.innerHeight - window.innerHeight) / anchorOffSet + 50;
+        anchorPoint = (window.innerHeight - window.innerHeight) / anchorOffSet;
       }
       anchorLinks[i].classList.remove('active');
       if((pageYOffset > anchorOffSet - anchorPoint) && pageYOffset < (anchorOffSet + anchorHight)) {
