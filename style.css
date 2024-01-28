@@ -63,6 +63,10 @@ a:hover {
     color: var(--secondColor);
 }
 
+ul > li.anim-item {
+    margin-left: 2em;
+}
+
 p,
 .content-block ul {
     margin-bottom: 1rem;
