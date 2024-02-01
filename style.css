@@ -559,6 +559,10 @@ header {
 .content-block__seven .grid-container {
     grid-template-columns: 2fr 3fr;
 }
+.content-block__seven .content-block__img {
+    max-width: none;
+    width: 100%;
+}
 
 .content-block .container {
     overflow: hidden;
@@ -880,7 +884,7 @@ hr {
 }
 
 .footer-disclaimer {
-    font-weight: normal;
+    font-weight: bold;
     font-size: 14px;
     padding-bottom: 50px;
     border-bottom: 2px solid var(--gray);
@@ -1057,6 +1061,9 @@ img.anim-item {
     .header-burger {
         height: 20px;
         margin: 0 20px;
+    }
+    .burger-menu {
+        background-size: 130%;
     }
 
     .content-block .container {
